@@ -25,4 +25,4 @@ jobs:
         with:
           java-version: 11
       - name: Lint
-        run: ./mvnw verify
+        run: ./mvnw verify -Dmaven.test.skip=true
