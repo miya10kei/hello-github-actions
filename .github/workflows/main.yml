@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  release:
+    types:
+      - released
+      - prereleased
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "${{ toJson(github) }}"
