@@ -10,7 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: |
+    - name: first
+      run: |
         echo "${{ toJson(github) }}"
         echo "test" > ./foo.txt
     - uses: actions/upload-artifact@v2
@@ -20,7 +21,8 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         name: foo
-    - run: |
+    - name: ls
+      run: |
         ls -la
     - name: Upload Release Asset
       id: upload-release-asset 
